@@ -36,3 +36,17 @@ WHERE (
  (Field6<Field7) +
  (Field7>Field2)
  ) % 2 = 0
+
+
+--=== PostgreSQL
+SELECT *
+FROM t1 
+WHERE (
+ (Field1>=0)::INT +
+ (Field2>=Field3)::INT +
+ (Field3<Field5)::INT +
+ (Field4=Field6)::INT +
+ (Field7>80)::INT +
+ (Field6<Field7)::INT +
+ (Field7>Field2)::INT
+ ) % 2 = 0
